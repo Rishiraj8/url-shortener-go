@@ -24,3 +24,22 @@ This is the frontend for the URL Shortener app, built with React. It allows user
 ```bash
 git clone https://github.com/your-username/url-shortener-frontend.git
 cd url-shortener-frontend
+
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Create .env File
+env
+Copy
+Edit
+REACT_APP_API_URL=https://your-backend.onrender.com
+This should match your Go backend's Render URL.
+
+4. Run Locally
+bash
+Copy
+Edit
+npm start
+
