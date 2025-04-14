@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import UrlShortener from './components/UrlShortener';
+import GlobalStyles from './styles/GlobalStyles';
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  padding: 2rem;
+`;
+
+const Title = styled.h1`
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+`;
+
+const Subtitle = styled.p`
+  color: #ccc;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+      <GlobalStyles />
+      <AppContainer>
+        <Title>URL Shortener</Title>
+        <Subtitle>
+          Simplify your links with our powerful URL shortening service.
+          Just paste your long URL and get a shortened version instantly.
+        </Subtitle>
+        <UrlShortener />
+      </AppContainer>
+    </>
   );
 }
 
