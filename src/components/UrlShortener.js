@@ -9,20 +9,31 @@ import { FiLink } from 'react-icons/fi';
 const ShortenContainer = styled.div`
   width: 100%;
   max-width: 700px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 `;
 
 const Form = styled.form`
   display: flex;
-  align-items: center;
-  gap: 1rem;
   width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 54px; /* Fixed height for better alignment */
+`;
+
+const GenerateButtonWrapper = styled.div`
+  height: 100%;
 `;
 
 const ErrorMessage = styled.p`
-  color: #FF3D00;
+  color: #dc3545;
   margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: rgba(255, 61, 0, 0.1);
+  padding: 0.75rem;
+  background-color: rgba(220, 53, 69, 0.1);
   border-radius: 4px;
   font-size: 0.9rem;
 `;
@@ -33,8 +44,11 @@ const LoadingIndicator = styled.div`
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
-  color: #FF6B00;
+  color: #ffffff;
   font-weight: 500;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   
   @keyframes spin {
     to { transform: rotate(360deg); }
@@ -48,12 +62,13 @@ const LoadingIndicator = styled.div`
 const HistorySection = styled.div`
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const HistoryTitle = styled.h3`
-  color: #ccc;
+  color: #ffffff;
   margin-bottom: 1rem;
+  font-weight: 600;
 `;
 
 const HistoryItem = styled.div`
@@ -61,18 +76,20 @@ const HistoryItem = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  margin-bottom: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
   font-size: 0.9rem;
+  transition: all 0.2s ease;
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
   }
 `;
 
 const OriginalUrl = styled.p`
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,7 +97,7 @@ const OriginalUrl = styled.p`
 `;
 
 const ShortUrlText = styled.p`
-  color: #FF6B00;
+  color: #F0DB4F;
   font-weight: 500;
 `;
 
@@ -135,7 +152,13 @@ const UrlShortener = () => {
           placeholder="Paste your long URL here"
           aria-label="URL to shorten"
         />
-        <Button type="submit" disabled={loading}>
+        <Button 
+          type="submit" 
+          disabled={loading} 
+          borderRadius="0 4px 4px 0"
+          height="100%"
+          padding="0 1.5rem"
+        >
           {loading ? 'Generating...' : 'Generate'}
         </Button>
       </Form>

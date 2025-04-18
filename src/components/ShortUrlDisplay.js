@@ -9,9 +9,10 @@ const ResultContainer = styled.div`
   width: 100%;
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: white;
   border-radius: 8px;
   animation: fadeIn 0.5s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -20,8 +21,9 @@ const ResultContainer = styled.div`
 `;
 
 const ResultTitle = styled.h3`
-  color: #FF6B00;
+  color: #00ACD7;
   margin-bottom: 1rem;
+  font-weight: 600;
 `;
 
 const UrlDisplay = styled.div`
@@ -30,14 +32,16 @@ const UrlDisplay = styled.div`
   align-items: center;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #f8f9fa;
   border-radius: 4px;
+  border: 1px solid #e9ecef;
 `;
 
 const ShortUrl = styled.p`
   font-weight: 500;
   word-break: break-all;
   margin-right: 1rem;
+  color: #00ACD7;
 `;
 
 const IconWrapper = styled.span`
@@ -48,7 +52,7 @@ const IconWrapper = styled.span`
 `;
 
 const CopiedMessage = styled.div`
-  color: #00C853;
+  color: #28a745;
   display: flex;
   align-items: center;
   gap: 0.5rem;
